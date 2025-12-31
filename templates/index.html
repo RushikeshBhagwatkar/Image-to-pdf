@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image to PDF Converter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+<div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-xl">
+
+  <h1 class="text-2xl font-bold text-center mb-1">Image to PDF</h1>
+  <p class="text-center text-gray-500 text-sm mb-5">
+    Upload, reorder, remove — then convert.
+  </p>
+
+  <!-- Upload -->
+  <div id="dropZone"
+    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-black transition">
+    <p class="text-gray-500">Drag & drop images here</p>
+    <p class="text-xs text-gray-400 mt-1">or click to browse</p>
+    <input id="fileInput" type="file" multiple accept="image/*" class="hidden">
+  </div>
+
+  <!-- Preview -->
+  <div id="preview" class="grid grid-cols-3 gap-3 mt-5"></div>
+
+  <!-- Actions -->
+  <div class="mt-6 flex gap-3">
+    <button onclick="convertPDF()"
+      class="flex-1 bg-black text-white py-2 rounded-lg hover:bg-gray-800">
+      Convert to PDF
+    </button>
+
+    <button onclick="resetAll()"
+      class="px-4 border rounded-lg hover:bg-gray-100">
+      Reset
+    </button>
+  </div>
+
+  <p class="text-xs text-center text-gray-400 mt-4">
+    Files never stored · Instant download
+  </p>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
